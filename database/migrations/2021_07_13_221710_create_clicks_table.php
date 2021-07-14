@@ -15,6 +15,9 @@ class CreateClicksTable extends Migration
     {
         Schema::create('clicks', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('listing_id')->constrained();
+            $table->text('user_agent')->nullable();
+            $table->string('ip')->nullable();
             $table->timestamps();
         });
     }
