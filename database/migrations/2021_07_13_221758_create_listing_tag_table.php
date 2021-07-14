@@ -16,7 +16,7 @@ class CreateListingTagTable extends Migration
         Schema::create('listing_tag', function (Blueprint $table) {
             $table->id();
             $table->foreignId('listing_id')->constrained();
-            $table->foreignId('click_id')->constrained();
+            $table->foreignId('tag_id')->constrained();
             $table->timestamps();
         });
     }
