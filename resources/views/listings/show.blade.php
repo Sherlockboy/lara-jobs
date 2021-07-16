@@ -24,7 +24,7 @@
                             <strong>Location: </strong>{{ $listing->location }}<br>
                             <strong>Company: </strong>{{ $listing->company }}
                         </p>
-                        <a href="#"
+                        <a href="{{ route('listings.apply', $listing->slug) }}"
                             class="block text-center my-4 tracking-wide bg-white text-indigo-500 text-sm font-meduim title-font py-2 border border-indigo-500 hover:bg-indigo-500 hover:text-white uppercase">Apply
                             Now</a>
                     </div>

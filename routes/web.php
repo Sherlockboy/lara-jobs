@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::name('listings.')->group(function () {
     Route::get('/', [ListingController::class, 'index'])->name('index');
     Route::get('/view/{listing}', [ListingController::class, 'show'])->name('show');
+    Route::get('/apply/{listing}', [ListingController::class, 'apply'])->name('apply');
 });
 
 Route::get('/dashboard', function () {
