@@ -14,10 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [ListingController::class, 'index'])->name('listings.index');
+Route::name('listings.')->group(function () {
+    Route::get('/', [ListingController::class, 'index'])->name('index');
+    Route::get('/view/{listing}', [ListingController::class, 'show'])->name('show');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
