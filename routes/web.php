@@ -18,6 +18,8 @@ Route::name('listings.')->group(function () {
     Route::get('/', [ListingController::class, 'index'])->name('index');
     Route::get('/view/{listing}', [ListingController::class, 'show'])->name('show');
     Route::get('/apply/{listing}', [ListingController::class, 'apply'])->name('apply');
+    Route::get('/new', [ListingController::class, 'create'])->name('create');
+    Route::post('/new', [ListingController::class, 'store'])->name('store');
 });
 
 Route::get('/dashboard', function () {
